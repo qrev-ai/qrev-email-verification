@@ -1,8 +1,7 @@
-
 import pytest
 from pi_conf import load_config
 
-from qrev_email_verification import InvalidEmailError, ZeroBounceService
+from qrev_email_verification import InvalidEmailError, ZBService
 from qrev_email_verification.services.zerobounce.models import ResultStatusEnum
 
 ## https://www.zerobounce.net/docs/email-validation-api-quickstart/#sandbox_mode__v2__
@@ -12,7 +11,7 @@ load_config("qrev-ai-test").to_env()
 
 @pytest.fixture
 def service():
-    return ZeroBounceService()
+    return ZBService()
 
 
 ## These are free api call emails from zerobounce
@@ -51,7 +50,7 @@ test_emails = [
 
 
 @pytest.mark.parametrize("email, category", test_emails)
-def test_email_validation(service: ZeroBounceService, email: str, category):
+def test_email_validation(service: ZBService, email: str, category):
     valids = set([ResultStatusEnum.VALID.value, ResultStatusEnum.CATCH_ALL.value])
     if category in valids:
         v = service.verify_email(email)

@@ -8,8 +8,10 @@ from qrev_email_verification.email_verification import (
 )
 from qrev_email_verification.models.models import InvalidEmailError
 from qrev_email_verification.services.millionverifier.api import (
-    MillionVerifierService,
-    MillionVerifierSettings,
+    MillionVerifierService as MVService,
+)
+from qrev_email_verification.services.millionverifier.api import (
+    MillionVerifierSettings as MVSettings,
 )
 from qrev_email_verification.services.millionverifier.models import (
     EmailResponse as MVEmailResponse,
@@ -18,14 +20,16 @@ from qrev_email_verification.services.millionverifier.models import (
     InvalidEmailError as MVInvalidEmailError,
 )
 from qrev_email_verification.services.millionverifier.mongo_api import (
-    MillionVerifierMongoService,
+    MillionVerifierMongoService as MVMongoService,
 )
 from qrev_email_verification.services.millionverifier.mongo_api import (
     MongoSettings as MVMongoSettings,
 )
 from qrev_email_verification.services.zerobounce.api import (
-    ZeroBounceService,
-    ZeroBounceSettings,
+    ZeroBounceService as ZBService,
+)
+from qrev_email_verification.services.zerobounce.api import (
+    ZeroBounceSettings as ZBSettings,
 )
 from qrev_email_verification.services.zerobounce.models import (
     EmailResponse as ZBEmailResponse,
@@ -36,21 +40,25 @@ from qrev_email_verification.services.zerobounce.models import (
 from qrev_email_verification.services.zerobounce.mongo_api import (
     MongoSettings as ZBMongoSettings,
 )
-from qrev_email_verification.services.zerobounce.mongo_api import ZeroBounceMongoService
+from qrev_email_verification.services.zerobounce.mongo_api import (
+    ZeroBounceMongoService as ZBMongoService,
+)
 
 __all__ = [
     "APIResponse",
     "EmailVerification",
     "EmailVerificationSettings",
     "InvalidEmailError",
-    "MVInvalidEmailError",
-    "ZBInvalidEmailError",
-    "MillionVerifierService",
-    "MillionVerifierSettings",
     "MVEmailResponse",
-    "MillionVerifierMongoService",
-    "ZeroBounceService",
+    "MVInvalidEmailError",
+    "MVMongoService",
+    "MVMongoSettings",
+    "MVService",
+    "MVSettings",
     "ZBEmailResponse",
-    "ZeroBounceMongoService",
-    "ZeroBounceSettings",
+    "ZBInvalidEmailError",
+    "ZBMongoService",
+    "ZBMongoSettings",
+    "ZBService",
+    "ZBSettings",
 ]

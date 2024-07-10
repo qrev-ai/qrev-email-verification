@@ -245,13 +245,13 @@ files = [
 
 [[package]]
 name = "pi-conf"
-version = "0.7.7.9"
+version = "0.7.8"
 description = "Easy configs for python projects"
 optional = false
 python-versions = "<4.0,>=3.9"
 files = [
-    {file = "pi_conf-0.7.7.9-py3-none-any.whl", hash = "sha256:0444047fb53dedbfd78cfec5460e54abff866f2d5e25463a284ec57d510c4052"},
-    {file = "pi_conf-0.7.7.9.tar.gz", hash = "sha256:63d6e93ceaede85ca4b61234cca87cc5ea03cf130ba89a1053d1fee49c640894"},
+    {file = "pi_conf-0.7.8-py3-none-any.whl", hash = "sha256:8af3de8fa2ab27abeab590b362fc17beb285421db93b118ed2b176c0b4fb92ba"},
+    {file = "pi_conf-0.7.8.tar.gz", hash = "sha256:6994063305110ff341eb20fd2f012994418fab84254147fc54327f9a34fba3c5"},
 ]
 
 [package.dependencies]
@@ -800,4 +800,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "6a0706ca441f8cf717712169c98689d463ea16da934e83e6fbf84d0996a98a9d"
+content-hash = "779e1b6a78dbefbbe16150494f1d10253ed1b60f8c2a631a85aba0b985283831"

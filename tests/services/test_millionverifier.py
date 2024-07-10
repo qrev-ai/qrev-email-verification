@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from pi_conf import load_config
 
-from qrev_email_verification import InvalidEmailError, MillionVerifierService
+from qrev_email_verification import InvalidEmailError, MVMongoService
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))  # for testing when in vscode
 
@@ -13,7 +13,7 @@ from tests.services.conftest import MockVerifierMixin
 load_config("qrev-ai-test").to_env()
 
 
-class MockVerifierService(MockVerifierMixin, MillionVerifierService):
+class MockVerifierService(MockVerifierMixin, MVMongoService):
     pass
 
 @pytest.fixture

@@ -5,11 +5,7 @@ import pytest
 from pi_conf import load_config
 from qrev_cache.mongo_cache import Var, mongo_cache
 
-from qrev_email_verification import (
-    InvalidEmailError,
-    MillionVerifierMongoService,
-    MVEmailResponse,
-)
+from qrev_email_verification import InvalidEmailError, MVEmailResponse, MVMongoService
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))  # for conftest
 
@@ -18,7 +14,7 @@ from tests.services.conftest import MockVerifierMixin
 load_config("qrev-ai-test").to_env()
 
 
-class MockMongoService(MockVerifierMixin, MillionVerifierMongoService):
+class MockMongoService(MockVerifierMixin, MVMongoService):
 
     @mongo_cache(
         env_prefix="MILLIONVERIFIER_",

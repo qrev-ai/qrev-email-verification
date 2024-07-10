@@ -6,7 +6,7 @@ requires = ["poetry-core"]
 authors = ["leeparnell <152523161+leeparnell@users.noreply.github.com>"]
 description = ""
 name = "qrev-email-verification"
-packages = [{from = "src", include = "qrev_email_verification"}]
+packages = [{ include = "qrev_email_verification"}]
 readme = "README.md"
 version = "0.1.0"
 

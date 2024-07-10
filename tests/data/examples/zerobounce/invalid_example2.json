@@ -1,0 +1,22 @@
+{
+    "address": "yt@example.com",
+    "status": "do_not_mail",
+    "sub_status": "global_suppression",
+    "free_email": false,
+    "did_you_mean": null,
+    "account": "yt",
+    "domain": "example.com",
+    "domain_age_days": "10558",
+    "smtp_provider": "",
+    "mx_found": "false",
+    "mx_record": null,
+    "firstname": null,
+    "lastname": null,
+    "gender": null,
+    "country": null,
+    "region": null,
+    "city": null,
+    "zipcode": null,
+    "processed_at": "2024-07-10 05:06:19.711",
+    "verified": false
+  }

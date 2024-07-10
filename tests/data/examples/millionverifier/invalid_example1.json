@@ -1,0 +1,18 @@
+{
+    "email": "hiro_protagonist@example.com",
+    "didyoumean": "",
+    "error": "",
+    "free": false,
+    "last_update": {
+      "$date": "2024-06-11T05:54:00.024Z"
+    },
+    "livemode": true,
+    "person_id": "",
+    "quality": "bad",
+    "result": "invalid",
+    "resultcode": 6,
+    "role": false,
+    "status": null,
+    "subresult": "no_mailbox",
+    "verified": false
+  }

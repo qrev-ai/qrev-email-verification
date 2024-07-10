@@ -24,7 +24,7 @@ class MillionVerifierMongoService(MillionVerifierService):
             "service": "MillionVerifier",
         }
     )
-    settings: MongoSettings = field(default_factory=MongoSettings)  # type : ignore
+    settings: MongoSettings = field(default_factory=MongoSettings)  # type: ignore
 
     def _get_email_response(self, email: str, **kwargs) -> EmailResponse:
         @wraps(self._get_email_response)

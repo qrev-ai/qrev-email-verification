@@ -11,6 +11,7 @@ from .models import EmailResponse
 
 class MongoSettings(MillionVerifierSettings):
     cache_only: bool = False
+    flat_data: bool = True
 
     model_config = SettingsConfigDict(env_prefix="MILLIONVERIFIER_")
 
@@ -31,6 +32,7 @@ class MillionVerifierMongoService(MillionVerifierService):
         @mongo_cache(
             env_prefix=self.settings.model_config.get("env_prefix"),
             query=self.query,
+            flat_data=self.settings.flat_data,
             data_type=self.data_type,
             cache_only=self.settings.cache_only,
         )

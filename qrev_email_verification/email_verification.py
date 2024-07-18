@@ -63,8 +63,8 @@ class EmailVerification:
 
     def get_email_responses(
         self, email: str, service_name: Optional[str] = None, include_invalids: bool = False
-    ) -> list[BaseModel]:
-        results = []
+    ) -> dict[str, BaseModel]:
+        results = {}
         services = (
             self.services if not service_name else {service_name: self.services[service_name]}
         )
@@ -73,11 +73,12 @@ class EmailVerification:
             ## or doesn't meet the validation criteria
             try:
                 r = service.verify_email(email)
-                results.append(r)
+                results[service_name] = r
             except InvalidEmailError as e:
                 if not include_invalids:
                     raise e
-                results.append(e.email_response)
+                results[service_name] = e.email_response
+                # results.append(e.email_response)
 
         else:
             return results

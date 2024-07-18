@@ -352,20 +352,17 @@ xml = ["lxml (>=4.9.2)"]
 
 [[package]]
 name = "pi-conf"
-version = "0.7.9"
+version = "0.8.2"
 description = "Easy configs for python projects"
 optional = false
 python-versions = "<4.0,>=3.9"
 files = [
-    {file = "pi_conf-0.7.9-py3-none-any.whl", hash = "sha256:374249f8a834ec00d48bd31fc89a107d5129975c4fd5c9964a1f79dd73f813d6"},
-    {file = "pi_conf-0.7.9.tar.gz", hash = "sha256:7f022edbbbfbe06677fcc59e782c6ce59048fa0a6911a9354ba7b06a1f5aff67"},
+    {file = "pi_conf-0.8.2-py3-none-any.whl", hash = "sha256:f53fc4d2cbbf263b49c4317ead7d593ef3a7b6c1f01ebe5629fb9de9c56bc64f"},
+    {file = "pi_conf-0.8.2.tar.gz", hash = "sha256:c2ab2767c25a28a316372fb16ddbd38b786501f2bb0b5dd15c82696a2b0a014a"},
 ]
 
 [package.dependencies]
 platformdirs = ">=3.0.0"
-
-[package.extras]
-yaml = ["pyyaml (>=5.0.0)"]
 
 [[package]]
 name = "platformdirs"
@@ -898,4 +895,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "132157bc4b80750d603b38f20acdd729b64a88a829a50a7b52e578408e8908e4"
+content-hash = "4c61f821e8cacaabddcfb178f9249cb8cf02e5b555e202d44d9bd541a8156431"

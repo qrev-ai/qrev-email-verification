@@ -17,12 +17,12 @@ pymongo = "^4.8.0"
 qrev-cache = {develop = true, path = "../qrev-cache"}
 requests = "^2.32.3"
 sympy = "^1.12.1"
-pi-conf = ">=0.7.8"
+pi-conf = "^0.8.2"
+
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
 types-requests = "^2.32.0.20240622"
-pi-conf = "^0.7.7.9"
 
 [tool.poetry.group.scripts.dependencies]
 pandas = "^2.2.2"

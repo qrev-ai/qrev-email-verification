@@ -35,7 +35,6 @@ class ZeroBounceService(EmailVerifyingService):
     def _get(self, url: str, params: dict[str, Any], **kwargs) -> APIResponse:
         if not self.settings.api_key:
             raise ValueError("API Key is required for ZeroBounce service")
-        print(f" url: {url}, params: {params}, kwargs: {kwargs}")
         r = requests.get(url, params=params, **kwargs)
         return APIResponse.from_response(r, "ZeroBounce")
 

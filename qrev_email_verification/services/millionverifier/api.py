@@ -23,7 +23,8 @@ class MillionVerifierSettings(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="MILLIONVERIFIER_")
 
 
-T = TypeVar('T', bound=BaseSettings)
+T = TypeVar("T", bound=BaseSettings)
+
 
 @dataclass
 class MillionVerifierService(EmailVerifyingService):
@@ -82,4 +83,3 @@ class MillionVerifierService(EmailVerifyingService):
         if er.error == "error" or not er.resultcode in self.settings.valid_includes:
             raise InvalidEmailError(er, f"Email {email} is not valid")
         return er
-    

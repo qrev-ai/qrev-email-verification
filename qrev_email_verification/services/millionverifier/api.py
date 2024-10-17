@@ -72,7 +72,10 @@ class MillionVerifierService(EmailVerifyingService):
             result = response.get_json()
             assert result and isinstance(result, dict)
             result.pop("credits", None)
-            er = EmailResponse(**result)
+            try:
+                er = EmailResponse(**result)
+            except Exception as e:
+                raise Exception(f"Error parsing response: {e}, response: {result}")
             return er
         else:
             # return {"error": "Unable to verify email", "status_code": response.status_code}

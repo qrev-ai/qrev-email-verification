@@ -2,7 +2,9 @@ from enum import IntEnum
 from typing import Optional, Union
 
 from pydantic import BaseModel, Field
+
 from qrev_email_verification.models.models import InvalidEmailError as BaseEmailError
+
 
 class ResultCodeEnum(IntEnum):
     # 1 : Ok,
@@ -40,13 +42,13 @@ class ResultCodeEnum(IntEnum):
 
 class EmailResponse(BaseModel):
     email: str
-    quality: str
+    quality: Optional[str] = None
     result: str
     resultcode: ResultCodeEnum
     subresult: str
     free: bool
     role: bool
-    didyoumean: str | None = None
+    didyoumean: Optional[str] = None
     error: str
     livemode: bool
     executiontime: Optional[int] = Field(default=None)

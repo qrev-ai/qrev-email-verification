@@ -6,7 +6,10 @@ from qrev_email_verification.email_verification import (
     EmailVerification,
     EmailVerificationSettings,
 )
-from qrev_email_verification.models.models import InvalidEmailError
+from qrev_email_verification.models.models import (
+    InsufficientCreditsError,
+    InvalidEmailError,
+)
 from qrev_email_verification.services.millionverifier.api import (
     MillionVerifierService as MVService,
 )
@@ -49,6 +52,7 @@ __all__ = [
     "EmailVerification",
     "EmailVerificationSettings",
     "InvalidEmailError",
+    "InsufficientCreditsError",
     "MVEmailResponse",
     "MVInvalidEmailError",
     "MVMongoService",

@@ -6,6 +6,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from qrev_email_verification import APIResponse
 from qrev_email_verification.email_verifying_service import EmailVerifyingService
+from qrev_email_verification.models.models import InsufficientCreditsError
 from qrev_email_verification.services.millionverifier.models import (
     EmailResponse,
     InvalidEmailError,
@@ -84,5 +85,7 @@ class MillionVerifierService(EmailVerifyingService):
     def verify_email(self, email: str, **kwargs) -> EmailResponse:
         er = self._get_email_response(email, **kwargs)
         if er.error == "error" or not er.resultcode in self.settings.valid_includes:
+            if er.resultcode == 4 and "Insufficient credits" in er.error:
+                raise InsufficientCreditsError(er, f"Insufficient credits for email {email}")
             raise InvalidEmailError(er, f"Email {email} is not valid")
         return er

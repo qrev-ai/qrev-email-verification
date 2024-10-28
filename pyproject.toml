@@ -8,14 +8,14 @@ description = ""
 name = "qrev-email-verification"
 packages = [{include = "qrev_email_verification"}]
 readme = "README.md"
-version = "0.2.1"
+version = "0.2.1.2"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-pi-conf = {develop = true, path = "../pi-conf"}
+pi-conf = "^0.8.5.2"
 pydantic-settings = "^2.3.4"
 pymongo = "^4.8.0"
-qrev-cache = {develop = true, path = "../qrev-cache"}
+qrev-cache = "^0.2.2"
 requests = "^2.32.3"
 sympy = "^1.12.1"
 

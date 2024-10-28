@@ -6,6 +6,7 @@ from pydantic import BaseModel, Field
 from qrev_email_verification.models.models import InvalidEmailError as BaseEmailError
 
 
+
 class ResultCodeEnum(IntEnum):
     # 1 : Ok,
     # 2: catch_all,

@@ -3,6 +3,11 @@ from typing import Any, Optional, Union
 import requests
 from pydantic import BaseModel, Field
 
+class InsufficientCreditsError(Exception):
+    def __init__(self, email_response: Any, message: str):
+        self.email_response = email_response
+        self.save_var = email_response
+        super().__init__(message)
 
 class InvalidEmailError(Exception):
     def __init__(self, email_response: Any, message: str):

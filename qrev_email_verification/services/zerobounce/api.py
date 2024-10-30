@@ -5,7 +5,7 @@ from typing import Any
 import requests
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-from qrev_email_verification import APIResponse
+from qrev_email_verification import APIResponse, InsufficientCreditsError
 from qrev_email_verification.email_verifying_service import EmailVerifyingService
 from qrev_email_verification.services.zerobounce.models import (
     EmailResponse,
@@ -52,6 +52,8 @@ class ZeroBounceService(EmailVerifyingService):
         assert result and isinstance(result, dict)
         result.pop("credits", None)
         er = EmailResponse(**result)
+        if er.error and "out of credits" in er.error:
+            raise InsufficientCreditsError(er, f"Insufficient credits: {er.error}")
         return er
 
     def verify_email(self, email: str, **kwargs) -> EmailResponse:
